@@ -82,3 +82,12 @@ Get-Item -path HKU:\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Run    --- get's
 
 
 NTFS 
+
+
+alernate data streams 
+dir /R 
+get-item  .\calc.fuk -stream truth.txt  
+get-content .\calc.fuk -stream truth.txt  
+"elden ring does deserve GOTY cause i'm still maidenless" 
+
+
