@@ -11,3 +11,51 @@ get-item WSMAN:\localhost\client\trustedhosts
 set-item -value -concatenate to add hosts
 
 cat .\words.txt | Select-String -pattern '\w*a\w*|\w*z\w*' | measure 
+
+
+
+_____________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+reg query HKEY_Users                      
+
+HKEY_USERS\.DEFAULT
+HKEY_USERS\S-1-5-19
+HKEY_USERS\S-1-5-20
+HKEY_USERS\S-1-5-21-3815887625-636170824-1205406010-1002
+HKEY_USERS\S-1-5-21-3815887625-636170824-1205406010-1002_Classes
+HKEY_USERS\S-1-5-21-3815887625-636170824-1205406010-1004
+HKEY_USERS\S-1-5-21-3815887625-636170824-1205406010-1004_Classes
+HKEY_USERS\S-1-5-21-3815887625-636170824-1205406010-1005
+HKEY_USERS\S-1-5-21-3815887625-636170824-1205406010-1005_Classes
+HKEY_USERS\S-1-5-18
+
+
+reg query HKEY_Users\*\Software\Microsoft\
+Windows\CurrentVersion\Runonce
+
+
+
+Get-childItem HKLM:\ -Recurse 
+
+
+
+Set-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run -name
+
+
+Set-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run -name malwar -value "i'm innocent"
+
+Get-Item -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+new-ItemProperty -path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run -name malwar -value "plz dont remmov" -Force
+
+
+malwar       : plz dont remmov
+PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+PSChildName  : Run
+PSDrive      : HKLM
+PSProvider   : Microsoft.PowerShell.Core\Registry
