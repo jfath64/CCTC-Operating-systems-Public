@@ -17,7 +17,7 @@ cat .\words.txt | Select-String -pattern '\w*a\w*|\w*z\w*' | measure
 _____________________________________________________________________________________________________________________________________________________
 
 
-
+QUERYING and MAKING A NEW KEY 
 
 
 reg query HKEY_Users                      
@@ -59,3 +59,25 @@ PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\M
 PSChildName  : Run
 PSDrive      : HKLM
 PSProvider   : Microsoft.PowerShell.Core\Registry
+
+
+ New-PSDrive -name HKU -PSProvider Registry -Root HKEY_users
+
+Name           Used (GB)     Free (GB) Provider      Root                                                    CurrentLocation
+----           ---------     --------- --------      ----                                                    ---------------
+HKU                                    Registry      HKEY_users                                                             
+
+add-content -value "New-PSDrive -name HKU -PSProvider Registry -Root HKEY_users" $profile.AllUsersAllHosts
+
+ &$profile.AllUsersAllHosts
+ 
+  $
+Name           Used (GB)     Free (GB) Provider      Root                                                    CurrentLocation
+----           ---------     --------- --------      ----                                                    ---------------
+HKU                                    Registry      HKEY_users\                                                            
+
+
+Get-Item -path HKU:\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Run    --- get's everything in the new profile 
+
+
+
