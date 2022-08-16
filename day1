@@ -79,5 +79,3 @@ HKU                                    Registry      HKEY_users\
 
 Get-Item -path HKU:\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Run    --- get's everything in the new profile 
 
-
-
