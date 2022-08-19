@@ -180,3 +180,6 @@ To mount HKU to filesystem:
  priv esc:
  
  HKey_local_machine\microsoft\windows 
+
+
+sudo dd if=/dev/sda of=MBRoutcast bs=1 count=512
