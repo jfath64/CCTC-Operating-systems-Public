@@ -1,6 +1,10 @@
 HKEY
 
 
+
+egrep '^([0-9a-fA-F][02468ACE]-)([0-9a-fA-F]{2}-){4}[0-9a-fA-F]{2}$' numbers  | wc -l 
+
+
 Windows powershell ssh:
 
 -needs WinRm to be running
