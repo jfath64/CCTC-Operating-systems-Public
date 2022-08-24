@@ -186,4 +186,8 @@ To mount HKU to filesystem:
  HKey_local_machine\microsoft\windows 
 
 
+
+ Get-ChildItem 'C:\$recycle.Bin' -Force -Recurse | ForEach-Object { if (($_.Extension) -like ".txt") {if ($_.Name -like "`$R*") {Write-Host $_.Name -NoNewline ; Write-Host " --> " -ForegroundColor Green -NoNewline ; Get-Content $_.FullName } } }
+
+
 sudo dd if=/dev/sda of=MBRoutcast bs=1 count=512
